@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
+
+# caching
+gem 'memcachier', group: :production
+gem 'dalli', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -49,5 +53,5 @@ gem 'public_suffix', '~> 1.4.6'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem "factory_girl_rails", "~> 4.0"
-  gem 'simplecov'
+  gem 'simplecov', '~> 0.9'
 end
