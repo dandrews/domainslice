@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -36,14 +37,17 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 # WHOIS
 gem 'whois', '~> 3.5.5'
 gem 'public_suffix', '~> 1.4.6'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'simplecov'
+end
