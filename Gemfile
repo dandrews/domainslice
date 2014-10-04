@@ -55,3 +55,5 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'simplecov', '~> 0.9'
 end
+
+ruby "2.1.1"
