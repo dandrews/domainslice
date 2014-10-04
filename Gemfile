@@ -46,6 +46,11 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+# twitter bootstrap
+gem 'bootstrap-sass', '~> 3.0.2.0'
+gem "font-awesome-rails"
+gem 'bootstrap-typeahead-rails'
+
 # WHOIS
 gem 'whois', '~> 3.5.5'
 gem 'public_suffix', '~> 1.4.6'
