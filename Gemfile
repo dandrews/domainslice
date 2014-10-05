@@ -47,7 +47,8 @@ gem 'unicorn'
 # gem 'capistrano', group: :development
 
 # twitter bootstrap
-gem 'bootstrap-sass', '~> 3.0.2.0'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 gem 'bootstrap-typeahead-rails'
 
