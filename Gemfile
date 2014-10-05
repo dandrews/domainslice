@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
-
 # caching
 gem 'memcachier', group: :production
 gem 'dalli', group: :production
@@ -55,6 +52,10 @@ gem 'bootstrap-typeahead-rails'
 # WHOIS
 gem 'whois', '~> 3.5.5'
 gem 'public_suffix', '~> 1.4.6'
+
+# MongoDB, Mongoid, BSON
+gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'bson_ext'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
