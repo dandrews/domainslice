@@ -7,7 +7,7 @@ class SearchesController < ApplicationController
 
     respond_to do |format|
       format.html { render }
-      format.js {}
+      format.js { render 'welcome/search' }
     end
 
   end
