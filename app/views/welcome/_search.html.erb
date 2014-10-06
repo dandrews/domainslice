@@ -1,6 +1,10 @@
 <%= form_tag('/search', remote: true) do %>
 <div class="form-group">
-  <%= text_field_tag :q, params[:q], :placeholder => 'Search', :id => "search", :class => "form-control", :type => "text" %>
+  <%= text_field_tag :q, params[:q], :placeholder => 'Search', :id => "search-input", :class => "form-control", :type => "text" %>
   <input type="submit" style="visibility:hidden;position:fixed;" />
 </div>
 <% end %>
+
+<script>
+  $("#search-input").focus();
+</script>
