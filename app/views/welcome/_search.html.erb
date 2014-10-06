@@ -1,7 +1,6 @@
-<form role="form">
+<form role="search" action="/search" method="get">
   <div class="form-group">
-    <label for="search">Search</label>
-    <input type="search" class="form-control" id="search" placeholder="Search">
+    <%= text_field_tag :q, params[:q], :placeholder => 'Search', :id => "search", :class => "form-control", :type => "text" %>
+    <input type="submit" style="visibility:hidden;position:fixed;" />
   </div>
-  <a class="btn btn-primary" href="" role="button">Search &raquo;</a>
 </form>

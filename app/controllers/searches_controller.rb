@@ -1,6 +1,17 @@
 class SearchesController < ApplicationController
   before_action :set_search, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @terms = params[:q].lstrip.rstrip
+    @results = Whois.whois(@terms)
+
+    respond_to do |format|
+      format.html { render }
+      format.js {}
+    end
+
+  end
+
   # GET /searches
   # GET /searches.json
   def index
