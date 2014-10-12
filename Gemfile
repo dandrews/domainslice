@@ -53,6 +53,9 @@ gem 'bootstrap-typeahead-rails'
 gem 'whois', '~> 3.5.5'
 gem 'public_suffix', '~> 1.4.6'
 
+# Zone Files
+gem 'dns-zone'
+
 # MongoDB, Mongoid, BSON
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 gem 'bson_ext'
