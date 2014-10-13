@@ -2,8 +2,11 @@
 <p>
   <% if results.available? %>
   <%= "Available!" %>
+  <%= link_to "buy now", "#", :class => 'btn btn-success' %>
   <% else %>
   <%= "Not Available :-(" %>
+  <%= link_to "make offer", "#", :class => 'btn btn-danger' %>
+  <%= link_to "whois", "#", :class => 'btn btn-danger' %>
   <% end %>
 </p>
 
