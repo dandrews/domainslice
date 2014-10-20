@@ -1,12 +1,16 @@
 <h1>Listing domains</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Word</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>.com</th>
+      <th>.net</th>
+      <th>.org</th>
+      <th>.co</th>
+      <th>.info</th>
+      <th>.biz</th>
+      <th>.mobi</th>
     </tr>
   </thead>
 
@@ -14,9 +18,27 @@
     <% @domains.each do |domain| %>
       <tr>
         <td><%= domain.word %></td>
-        <td><%= link_to 'Show', domain %></td>
-        <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
-        <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class=<%= domain.com ? 'danger' : 'success' %>>
+	  <%= domain.com ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.net ? 'danger' : 'success' %>>
+	  <%= domain.net ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.org ? 'danger' : 'success' %>>
+	  <%= domain.org ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.co ? 'danger' : 'success' %>>
+	  <%= domain.co ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.info ? 'danger' : 'success' %>>
+	  <%= domain.info ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.biz ? 'danger' : 'success' %>>
+	  <%= domain.biz ? 'Taken' : 'Available' %>
+	</td>
+        <td class=<%= domain.mobi ? 'danger' : 'success' %>>
+	  <%= domain.mobi ? 'Taken' : 'Available' %>
+	</td>
       </tr>
     <% end %>
   </tbody>
