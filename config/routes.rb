@@ -9,6 +9,8 @@ Domainslice::Application.routes.draw do
 
   match 'search' => 'searches#search', :via => :post
 
+  resources :domains
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
