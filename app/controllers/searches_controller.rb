@@ -3,11 +3,22 @@ class SearchesController < ApplicationController
 
   def search
     @terms = params[:q].lstrip.rstrip
-    @results = Whois.whois(@terms)
+    @result = Domain.where(word: @terms).first
 
     respond_to do |format|
       format.html { render }
       format.js { render 'welcome/search' }
+    end
+
+  end
+
+  def whois
+    @terms = params[:q].lstrip.rstrip
+    @results = Whois.whois(@terms)
+
+    respond_to do |format|
+      format.html { render }
+      format.js { render 'welcome/whois' }
     end
 
   end

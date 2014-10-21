@@ -1,12 +1,16 @@
-<h2><%= terms %></h2>
-<p>
-  <% if results.available? %>
-  <%= "Available!" %>
-  <%= link_to "buy now", "#", :class => 'btn btn-success' %>
-  <% else %>
-  <%= "Not Available :-(" %>
-  <%= link_to "make offer", "#", :class => 'btn btn-danger' %>
-  <%= link_to "whois", "#", :class => 'btn btn-danger' %>
+<h2><%= result.word %></h2>
+<div class="tld-col">
+  <% result.tlds.each do |tld| %>
+  <ul class="unstyled">
+    <li>
+      <ul class="unstyled">
+	<li>.<%= tld %></li>
+	<li><%= render partial: "welcome/data", locals: {term: result.word, taken: result[tld], tld: tld } %></li>
+      </ul>
+    </li>
+  </ul>
   <% end %>
-</p>
-
+</div>
+<div class="whois-col">
+  <div id="whois-box"></div>
+</div>

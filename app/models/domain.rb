@@ -11,4 +11,8 @@ class Domain
   field :biz,                type: Boolean, default: false
   field :mobi,               type: Boolean, default: false
 
+  def tlds
+    ['com', 'net', 'org', 'co', 'info', 'biz', 'mobi']
+  end
+
 end
