@@ -2,8 +2,12 @@ class SearchesController < ApplicationController
   before_action :set_search, only: [:show, :edit, :update, :destroy]
 
   def search
-    @terms = params[:q].lstrip.rstrip
+    @terms = params[:q].lstrip.rstrip.downcase.gsub(/[^0-9a-z-]/, '')
     @result = Domain.where(word: @terms).first
+
+    if @result.blank?
+      @result = Domain.new(word: @terms)
+    end
 
     respond_to do |format|
       format.html { render }

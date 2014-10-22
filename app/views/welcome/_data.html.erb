@@ -1,6 +1,6 @@
 <% unless taken %>
-<%= link_to "buy now", "#", :class => 'btn btn-success' %>
+<%= link_to "buy now", "##{term}.#{tld}", :class => 'btn btn-success' %>
 <% else %>
-<%= link_to "make offer", "#", :class => 'btn btn-danger' %>
-<%= link_to "whois", whois_path(q: term + "."  + tld ), :class => 'btn btn-danger', :remote => true %>
+<%= link_to "make offer", "##{term}.#{tld}", :class => 'btn btn-danger' %>
+<%= link_to "whois", whois_path(q: "#{term}.#{tld}"), :class => 'btn btn-danger', :remote => true %>
 <% end %>

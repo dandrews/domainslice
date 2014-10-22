@@ -1,1 +1,5 @@
+<% if @terms.blank? %>
+$('#results-box').html('')
+<% else %>
 $('#results-box').html('<%= j render partial: "welcome/results", locals: { terms: @terms, result: @result } %>')
+<% end %>

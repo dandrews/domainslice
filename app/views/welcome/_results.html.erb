@@ -1,15 +1,15 @@
 <h2><%= result.word %></h2>
 <div class="tld-col">
-  <% result.tlds.each do |tld| %>
-  <ul class="unstyled">
+  <ul>
+    <% result.tlds.each do |tld| %>
     <li>
-      <ul class="unstyled">
-	<li>.<%= tld %></li>
-	<li><%= render partial: "welcome/data", locals: {term: result.word, taken: result[tld], tld: tld } %></li>
-      </ul>
+      <p>
+      <%= "#{result.word}.#{tld}" %>&nbsp;
+      <%= render partial: "welcome/data", locals: {term: result.word, taken: result[tld], tld: tld } %>
+      </p>
     </li>
+    <% end %>
   </ul>
-  <% end %>
 </div>
 <div class="whois-col">
   <div id="whois-box"></div>
