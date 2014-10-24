@@ -43,6 +43,10 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+# Refresh views on change
+gem 'guard-livereload', require: false, group: :development
+gem "rack-livereload", :group => :development
+
 # twitter bootstrap
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'autoprefixer-rails'
