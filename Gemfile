@@ -43,9 +43,12 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Refresh views on change
-gem 'guard-livereload', require: false, group: :development
-gem "rack-livereload", :group => :development
+group :development, :test do
+  gem 'guard', '>= 2.2.2',  require: false
+  gem 'guard-livereload',   require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent',         require: false
+end
 
 # twitter bootstrap
 gem 'bootstrap-sass', '~> 3.0.3.0'
