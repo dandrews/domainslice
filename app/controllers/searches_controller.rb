@@ -16,6 +16,22 @@ class SearchesController < ApplicationController
 
   end
 
+  def suggest
+    @terms = params[:q].lstrip.rstrip.downcase.gsub(/[^0-9a-z-]/, '')
+    a = []
+    File.open('all_zones.txt') do |f|
+      f.lines.each do |line|
+        a << line
+      end
+    end
+    @results = a.sample(10)
+    puts @results
+    respond_to do |format|
+      format.html { render }
+      format.js { render 'welcome/suggest' }
+    end
+  end
+
   def whois
     @terms = params[:q].lstrip.rstrip
     @results = Whois.whois(@terms)

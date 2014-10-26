@@ -7,8 +7,9 @@ Domainslice::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  match 'search'       => 'searches#search', :via => :post
-  match 'whois'        => 'searches#whois',  :via => :get
+  match 'search'       => 'searches#search',  :via => :post
+  match 'whois'        => 'searches#whois',   :via => :get
+  match 'suggest'      => 'searches#suggest', :via => :post
 
   resources :domains
 

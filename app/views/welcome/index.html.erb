@@ -1,16 +1,46 @@
 <div class="row">
-  <div class="col-md-12"></div>
-  <div id="search-box">
-    <%= render 'search' %>
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <div class="row">
+
+      <div id="header">
+	<div class="pull-left">
+	  Slice Domains
+	</div>
+	<div class="pull-right">
+	  <a href="/about/">About</a>
+	  <a href="/faq/">FAQ</a>
+	</div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div id="search-box">
+	<%= render 'search' %>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+	<div id="results-box"></div>
+      </div>
+
+      <div class="col-md-4">
+	<div id="whois-box"></div>
+	<div id="suggestion-box"></div>
+      </div>
+
+      <div class="col-md-4">
+	<div id="more-stuff-box"></div>
+      </div>
+
+    </div>
+
   </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div id="results-box"></div>
-  </div>
-  <div class="col-md-4">
-    <div id="whois-box"></div>
-  </div>
-  <div class="col-md-4">
-  </div>
+
 </div>
