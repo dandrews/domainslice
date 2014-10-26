@@ -15,4 +15,19 @@ class Domain
     ['com', 'net', 'org', 'co', 'info', 'biz', 'mobi']
   end
 
+  def self.new_tlds
+    a = []
+    File.open('new_tlds.txt') do |f|
+      f.each_line do |line|
+        a << line.strip
+      end
+    end
+    # a.sample(10)
+    return a
+  end
+
+  def self.matching_tlds terms
+    self.new_tlds.select { |word| terms.end_with?(word) }
+  end
+
 end

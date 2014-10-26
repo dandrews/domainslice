@@ -4,28 +4,19 @@ class SearchesController < ApplicationController
   def search
     @terms = params[:q].lstrip.rstrip.downcase.gsub(/[^0-9a-z-]/, '')
     @result = Domain.where(word: @terms).first
-
     if @result.blank?
       @result = Domain.new(word: @terms)
     end
-
+    @new_tlds = Domain.matching_tlds(@terms).map{|tld| ".#{tld}"}
     respond_to do |format|
       format.html { render }
       format.js { render 'welcome/search' }
     end
-
   end
 
   def suggest
     @terms = params[:q].lstrip.rstrip.downcase.gsub(/[^0-9a-z-]/, '')
-    a = []
-    File.open('all_zones.txt') do |f|
-      f.lines.each do |line|
-        a << line
-      end
-    end
-    @results = a.sample(10)
-    puts @results
+    @results = Domain.matching_tlds(@terms).map{|tld| ".#{tld}"}
     respond_to do |format|
       format.html { render }
       format.js { render 'welcome/suggest' }
@@ -35,12 +26,10 @@ class SearchesController < ApplicationController
   def whois
     @terms = params[:q].lstrip.rstrip
     @results = Whois.whois(@terms)
-
     respond_to do |format|
       format.html { render }
       format.js { render 'welcome/whois' }
     end
-
   end
 
   # GET /searches

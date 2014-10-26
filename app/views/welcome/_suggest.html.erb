@@ -1,0 +1,13 @@
+<h2>New TLDs</h2>
+<div class="new-tld-col">
+  <ul class="list-unstyled">
+    <% result.each do |new_tld| %>
+    <li>
+      <p class="<%= new_tld %>">
+      <%= new_tld %>&nbsp;
+      <%= render partial: "welcome/data", locals: {term: "", taken: false, tld: new_tld} %>
+      </p>
+    </li>
+    <% end %>
+  </ul>
+</div>
